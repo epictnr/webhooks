@@ -1,0 +1,6 @@
+# Source files
+.editorconfig
+.gitignore
+.npmrc
+.DS_Store
+.eslintrc
