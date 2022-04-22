@@ -1,15 +1,22 @@
 {
   "name": "@epictnr/webhooks",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Send events through webhook (as http requests)",
   "main": "src/index.js",
   "scripts": {
     "test": "jest test",
     "pub": "npm publish",
     "lint": "eslint ./src --color"
   },
-  "author": "olegator8800",
-  "license": "ISC",
+  "author": "olegator8800 <olegator8800@gmail.com>",
+  "repository": "epictnr/webhooks",
+  "license": "MIT",
+  "keywords": [
+    "micro-starter",
+    "eventbus",
+    "webhook",
+    "http"
+  ],
   "devDependencies": {
     "@epictnr/eslint-config-epictnr": "^1.0.0",
     "babel-eslint": "^10.0.1",
