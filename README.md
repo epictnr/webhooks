@@ -1,18 +1,13 @@
-epictnr webhooks
+Epictnr Webhooks 🏹
 ======
 
-Отправка событий через webhook`и
+Send events through webhook (as http requests)
 
-### Для публикации пакета:
+*(the part of [micro-starter](https://github.com/epictnr/micro-starter-kit) framework)*
 
-```bash
-npm pub
-```
+### How to use:
 
-
-### Example:
-
-#### Configs:
+##### Config:
 ```js
 const config = {
     webHooks: {
@@ -25,7 +20,7 @@ const config = {
 }
 ```
 
-#### init:
+##### init:
 ```js
 const epictnrWebhooks = require('@epictnr/webhooks')
 const logger = require('../logger')
@@ -36,7 +31,7 @@ const clients = [
         'id': 1,
         'service': 'big-service',
         'events': [
-            'some_balacne_change',
+            'some_balance_change',
             'another_event_change',
         ],
         'endpoint': 'test.acme.dev/events'
@@ -54,7 +49,7 @@ const webhooksMaster = epictnrWebhooks.webhooksMaster(webhooksConfig)
 webhooksMaster.setClients(clients)
 ```
 
-#### Master Server:
+##### Master Server:
 ```js
 webhooksMaster.start()
 
@@ -63,7 +58,7 @@ process.on('SIGINT', () => {
 })
 ```
 
-#### Send event:
+##### Send event:
 ```js
 class AcmeBalanceChange {
   constructor (accountId, balance, previousBalance, currency) {
@@ -76,7 +71,7 @@ class AcmeBalanceChange {
   }
 
   getEventType () {
-    return 'some_balacne_change'
+    return 'some_balance_change'
   }
 }
 
@@ -86,4 +81,10 @@ eventBus.emit(new AcmeBalanceChange(
     50,
     'RUB'
 ))
+```
+
+### How to publish:
+
+```console
+$ npm pub
 ```
